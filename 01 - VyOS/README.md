@@ -24,7 +24,7 @@
 
 ## 1.2 Conf automatique du clavier azerty
 
-1. **Utiliser la commande pour la conf du clavier en azerty :**
+   - Utiliser la commande pour la conf du clavier en azerty :
    ```bash
    sudo dpkg-reconfigure console-data
    ```
