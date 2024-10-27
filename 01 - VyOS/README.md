@@ -42,7 +42,7 @@
 ## 1.3 Homogénéisation automatique des noms des interfaces
 
 1. **Modification script de démarrage :**
-   - Supprimer les lignes contenant hw-id de la configuration principale (fichier config.boot) :
+   - Supprimer les lignes contenant hw-id de la configuration principale (fichier `sudo vi /config/scripts/vyos-preconfig-bootup.script`) :
    ```bash
    sudo sed -i '/hw-id/d' /config/config.boot
    ```
