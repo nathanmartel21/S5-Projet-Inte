@@ -63,3 +63,14 @@
    ```bash
    filetool.sh -b
    ```
+
+## 3.4bis Adressage des machines Microcore :
+   - 
+
+
+
+
+
+sources : https://forum.tinycorelinux.net/index.php/topic,13781.0.html
+
+
