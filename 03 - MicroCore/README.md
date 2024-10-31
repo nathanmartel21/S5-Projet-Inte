@@ -77,7 +77,7 @@
    pkill udhcpc # Arrêter le processus UDHCPC
 sudo ip addr add [@IP]/[MASK] dev [INTERFACE] #Ajoute une @IP à la machine
    sudo ip route add default via [GATEWAY] dev [INTERFACE] #Ajoute une default gateway
-   sudo echo nameserver [DNSSERVEUR] #Ajoute le serveur DNS pour les résolutions
+   sudo nameserver [DNSSERVEUR] #Ajoute le serveur DNS pour les résolutions
    ```
    - Ajout de la configuration pour qu'elle persiste au démarrage :
    ```bash
