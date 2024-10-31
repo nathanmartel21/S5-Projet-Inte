@@ -47,10 +47,19 @@
    - Redémarrer la VM avec l'option None
 
 ## 3.4 Intégration des commandes Linux
-   L'intégration d'iPv6 dans Microcore se fait par la bibliothèque iptables qui contient elle-même le package ipv6-netfilter. Dans un tty, saisir :
+   - L'intégration d'iPv6 dans Microcore se fait par la bibliothèque iptables qui contient elle-même le package ipv6-netfilter. Dans un tty, saisir :
    ```bash
    tce-load -wi tcpdump.tcz
    tce-load -wi iproute2.tcz
    tce-load -wi iptables
    sudo modprobe ipv6
+   ```
+   - Ajout de la configuration pour qu'elle persiste au démarrage :
+   ```bash
+   sudo –s
+   echo "sudo modprobe ipv6" >> /opt/bootlocal.sh
+   ```
+   - Enfin, ne pas oublier de sauvegarder les modifications :
+   ```bash
+   filetool.sh -b
    ```
