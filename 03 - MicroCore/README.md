@@ -47,7 +47,7 @@
    - Redémarrer la VM avec l'option None
 
 ## 3.4 Intégration des commandes Linux
-   Dans un tty, saisir :
+   L'intégration d'iPv6 dans Microcore se fait par la bibliothèque iptables qui contient elle-même le package ipv6-netfilter. Dans un tty, saisir :
    ```bash
    tce-load -wi tcpdump.tcz
    tce-load -wi iproute2.tcz
