@@ -88,8 +88,7 @@ sudo ip addr add [@IP]/[MASK] dev [INTERFACE] #Ajoute une @IP à la machine
    ```bash
    filetool.sh -b
    ```   
-
-
+   A chaque redémarrage, Microcore excutera le script et recevra l'adresse statique indiquée dans le script.
 
 <!--sources : https://forum.tinycorelinux.net/index.php/topic,13781.0.html -->
 
