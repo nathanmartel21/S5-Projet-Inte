@@ -70,7 +70,7 @@
    ```bash
    touch /opt/eth0.sh
    ```
-   Inclure les lignes suivantes dans le script pour la config de l'interface de la machine :
+   - Inclure les lignes suivantes dans le script pour la config de l'interface de la machine :
    ```bash
    #!/bin/sh
    
