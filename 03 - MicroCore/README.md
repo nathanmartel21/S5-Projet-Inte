@@ -51,5 +51,6 @@
    ```bash
    tce-load -wi tcpdump.tcz
    tce-load -wi iproute2.tcz
-   # IPv6 ?? https://forum.tinycorelinux.net/index.php/topic,23340.0.html
-   ```  
+   tce-load -wi iptables
+   sudo modprobe ipv6
+   ```
