@@ -65,12 +65,34 @@
    ```
 
 ## 3.4bis Adressage des machines Microcore :
-   - 
+   - Chaque machine Microcore possède une @IP différente et fixe. Cf tableau adressage.
+     Pour rendre l'adressage persistent :
+   ```bash
+   touch /opt/eth0.sh
+   ```
+   Inclure les lignes suivantes dans le script pour la config de l'interface de la machine :
+   ```bash
+   #!/bin/sh
+   
+   pkill udhcpc # Arrêter le processus UDHCPC
+sudo ip addr add [@IP]/[MASK] dev [INTERFACE] #Ajoute une @IP à la machine
+   sudo ip route add default via [GATEWAY] dev [INTERFACE] #Ajoute une default gateway
+   sudo echo nameserver [DNSSERVEUR] #Ajoute le serveur DNS pour les résolutions
+   ```
+   - Ajout de la configuration pour qu'elle persiste au démarrage :
+   ```bash
+   sudo –s
+   echo "sudo /opt/eth0.sh" >> /opt/bootlocal.sh
+   ```
+   - Enfin, ne pas oublier de sauvegarder les modifications :
+   ```bash
+   filetool.sh -b
+   ```   
 
 
 
+<!--sources : https://forum.tinycorelinux.net/index.php/topic,13781.0.html -->
 
 
-sources : https://forum.tinycorelinux.net/index.php/topic,13781.0.html
 
 
