@@ -15,7 +15,8 @@
    - Laisser les paramètres par défaut pour les autres pages et cliquer à la fin sur **Proceed**.
    - À la fin de l'installation, si tout est ok, on a le message suivant : `Setting up core image on /mnt/sda1`.
    - Redémarrer la VM
-  
+   <br>
+
    > Source : [Lien YouTube](https://www.youtube.com/watch?v=_oNzsIcvfbM)
 
 ## 3.2 Conf automatique du clavier azerty
