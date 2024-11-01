@@ -38,7 +38,7 @@
    filetool.sh -b
    ```
 
-   > Source : [Lien YouTube](https://www.eldin.net/meteo/tinycore.php)
+   > Source : [Lien externe](https://www.eldin.net/meteo/tinycore.php)
 
 ## 3.3 Conf des dossiers utilisateurs et logiciels afin qu'ils soient persistant
    - Lancer la VM et dans RunProgram, lancer editor en super utilisateur
