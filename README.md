@@ -64,3 +64,6 @@ Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et p
 
 ## Auteur
 @uthor : Nathan Martel
+<br>
+
+*If you have access to this GitHub repository in any way, you are strictly prohibited from using, reproducing, or distributing any of the resources, code, or research contained within this project. Access to this repository does not grant permission to utilize or share any part of its content without explicit authorization*
