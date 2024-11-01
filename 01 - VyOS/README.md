@@ -22,7 +22,8 @@
    - Dans les paramètres de la VM, CD/DVD (SATA), décocher `Connected` et `Connect at power on` et cocher `Use Physical drive`.
    - Redémarrer la VM.
   <br>
-  > Source : [Lien youtube](https://www.youtube.com/watch?v=F2kQcozCZ4I)
+  
+> Source : [Lien youtube](https://www.youtube.com/watch?v=F2kQcozCZ4I)
 
 ## 1.2 Conf automatique du clavier azerty
 
@@ -41,7 +42,7 @@
      save
      ```
 
-   > Source : [Lien externe](https://forum.vyos.io/t/change-keyboard-layout/5836/4)
+> Source : [Lien externe](https://forum.vyos.io/t/change-keyboard-layout/5836/4)
 
 ## 1.3 Homogénéisation automatique des noms des interfaces
 
@@ -62,8 +63,7 @@
    exit
    reboot
    ```
-
-   > Source : [Lien externe](https://forum.vyos.io/t/question-about-config-config-boot/14808/5)
+> Source : [Lien externe](https://forum.vyos.io/t/question-about-config-config-boot/14808/5)
 
 <!-- 
 1. **Homogénéisation des noms :**
