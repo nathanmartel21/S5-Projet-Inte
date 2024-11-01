@@ -11,16 +11,16 @@ Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et p
 
 ## Adressage
 
-| Réseaux | Adresses réseaux            |
+| Réseaux | Adresses réseaux             |
 |---------|------------------------------|
 | N0      | 172.16.8.0/24                |
-|         | 2002:16:8::/64               |
+|         | 2002:16:0:0::/64             |
 | N2      | 10.8.2.0/24                  |
 |         | 2001:0:8:2::/64              |
 | N4      | 192.168.8.4/30               |
 |         | 3FFE:0:8:4::/64              |
 
-| Réseaux | Adresses réseaux            |
+| Réseaux | Adresses réseaux             |
 |---------|------------------------------|
 | N1      | 10.8.1.0/24                  |
 |         | 2001:0:8:1::/64              |
@@ -31,13 +31,14 @@ Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et p
 
 *Tableau 1 : Adresses des réseaux de NetLab*
 
-| Interfaces | Adresses interfaces       |
+| Interfaces | Adresses interfaces        |
 |------------|----------------------------|
 | R0 - N1    | 10.8.1.1/24                |
 |            | 2001:0:8:1::1/64           |
 | R0 - N2    | 10.8.2.1/24                |
 |            | 2001:0:8:2::1/64           |
 | R0 - N5    | 10.8.5.2/24                |
+|            | 2001:8:x:5::2/64           |
 | R2 - N3    | 10.8.3.1/24                |
 |            | 2001:0:8:3::1/64           |
 | R2 - N4    | 192.168.8.6/30             |
@@ -45,28 +46,21 @@ Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et p
 | T1 - N3    | 10.8.3.102/24              |
 | T2 - N2    | 10.8.2.102/24              |
 
-| Interfaces | Adresses interfaces       |
+| Interfaces | Adresses interfaces        |
 |------------|----------------------------|
-| N0         | 172.16.8.x/24              |
+| R1 - N0    | 172.16.8.x/24              |
 |            | 2002:16:8::x/64            |
 | R1 - N4    | 192.168.8.5/30             |
 |            | 3FFE:0:8:4::1/64           |
-| N5         | 10.8.5.1/24                |
+| R1 - N5    | 10.8.5.1/24                |
 |            | 2001:0:8:5::1/64           |
 
-| Interfaces | Adresses interfaces       |
-|------------|----------------------------|
-| N0         | 172.16.8.x/24              |
-|            | 2002:16:8::x/64            |
-| R1 - N4    | 192.168.8.5/30             |
-|            | 3FFE:0:8:4::1/64           |
-| N5         | 10.8.5.1/24                |
-|            | 2001:0:8:5::1/64           |
-
-| Interfaces | Adresses interfaces       |
+| Interfaces | Adresses interfaces        |
 |------------|----------------------------|
 | T3 - N5    | 10.8.5.103/24              |
 | T4 - N3    | 10.8.3.104/24              |
+
+*Tableau 2: Adresses des interfaces réseaux des équipements de NetLab*
 
 ## Auteur
 @uthor : Nathan Martel
