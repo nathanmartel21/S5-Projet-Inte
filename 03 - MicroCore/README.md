@@ -15,6 +15,8 @@
    - Laisser les paramètres par défaut pour les autres pages et cliquer à la fin sur **Proceed**.
    - À la fin de l'installation, si tout est ok, on a le message suivant : `Setting up core image on /mnt/sda1`.
    - Redémarrer la VM
+  
+   > Source : [Lien YouTube](https://www.youtube.com/watch?v=_oNzsIcvfbM)
 
 ## 3.2 Conf automatique du clavier azerty
    - Installation du package de disposition de clavier :
@@ -35,6 +37,8 @@
    filetool.sh -b
    ```
 
+   > Source : [Lien YouTube](https://www.eldin.net/meteo/tinycore.php)
+
 ## 3.3 Conf des dossiers utilisateurs et logiciels afin qu'ils soient persistant
    - Lancer la VM et dans RunProgram, lancer editor en super utilisateur
    - Ouvrir le fichier `/mnt/sda1/tce/boot/extlinux/extlinux.conf`
@@ -45,6 +49,8 @@
    - Sauvegarder le fichier, quitter
    - Dans le ControlPanel > Backup/Restore > Included for Backup, supprimer les items `opt` et `home`
    - Redémarrer la VM avec l'option None
+
+   > Source : [Lien YouTube](https://www.youtube.com/watch?v=9fVkWLM0sCg)
 
 ## 3.4 Intégration des commandes Linux
    - L'intégration d'iPv6 dans Microcore se fait par la bibliothèque iptables qui contient elle-même le package ipv6-netfilter. Dans un tty, saisir :
@@ -63,6 +69,8 @@
    ```bash
    filetool.sh -b
    ```
+
+   > Source : [Lien externe](https://brezular.com/2011/01/26/linux-core-as-network-host/)
 
 ## 3.4bis Adressage des machines Microcore :
    - Chaque machine Microcore possède une @IP différente et fixe. Cf tableau adressage.
@@ -90,7 +98,7 @@ sudo ip addr add [@IP]/[MASK] dev [INTERFACE] #Ajoute une @IP à la machine
    ```   
    A chaque redémarrage, Microcore excutera le script et recevra l'adresse statique indiquée dans le script.
 
-<!--sources : https://forum.tinycorelinux.net/index.php/topic,13781.0.html -->
+   > Source : [Lien externe](https://forum.tinycorelinux.net/index.php/topic,13781.0.html)
 
 
 
