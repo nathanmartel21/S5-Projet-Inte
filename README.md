@@ -1,4 +1,4 @@
-# Projet Intégrateur - Systèmes et Réseaux Virtuels
+# Projet Intégrateur - Systèmes et réseaux virtuels
 
 ## Description
 Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et programmation en C, s'inscrivant dans le cadre de mes études à l'[IMT Mines Alès](https://www.imt-mines-ales.fr/). Il vise à développer mes compétences dans la configuration de machines virtuelles, la gestion de réseaux, et la création de commandes réseau personnalisées sous Linux. Le projet se déroule dans un environnement virtualisé utilisant l'hyperviseur VMware et s'appuie sur des outils de versionnement avec Git.
