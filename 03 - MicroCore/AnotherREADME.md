@@ -40,7 +40,7 @@ Cher lecteur, ou lectrice, aujourd’hui tu vas apprendre des trucs cool sur Mic
 
 ### 2. Redirection stdout vers ttyS0 :
 
-Tinycore prend en charge tous les codes de démarrage supplémentaires. Dans cette longue liste, il y a l’option console=. Dans mon cas, c'était :
+Tinycore prend en charge tous les codes de démarrage supplémentaires. Dans cette longue liste, il y a l’option `console=`. Dans mon cas, c'était :
   ```bash
   console=ttyS0,9600n8
   ```
