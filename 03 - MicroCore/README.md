@@ -21,7 +21,7 @@
    - Plusieurs options d’installation vont t’être demandées :
      - Sélectionner le **CD Rom comme source d’installation** : taper la lettre `c`
      - Sélectionner **Frugal** pour installer Tinycore en Frugal sur le disque local : taper `f`
-     - Choisisser l’option `1` pour utiliser le disque en entier
+     - Choisir l’option `1` pour utiliser le disque en entier
      - Sélectionner le **disque local sda** (option `2`)
      - **Installer un chargeur de démarrage local** : taper `y`
      - **Installer les extensions à partir de ce répertoire TCD/CDE** : taper `n`
