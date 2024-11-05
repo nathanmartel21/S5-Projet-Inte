@@ -95,7 +95,7 @@
    - Chaque machine Microcore possède une @IP différente et fixe. Cf tableau adressage.
      Pour rendre l'adressage persistent :
    ```bash
-   touch /opt/eth0.sh && chmod 755 /opt/eth0.sh
+   touch /opt/eth0.sh && sudo chmod 755 /opt/eth0.sh
    ```
    - Inclure les lignes suivantes dans le script pour la config de l'interface de la machine :
    ```bash
