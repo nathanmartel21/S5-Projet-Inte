@@ -7,17 +7,35 @@
    - **Proc** : 4
    - **Hard drive** : SATA (4 GB)
 
-2. **Installation de MicroCore** :
+2. **Installation de MicroCore en Frugal** :
 
    - Démarrer la VM avec l'ISO de MicroCore.
-   - Faire [clic droit] sur le bureau et cliquer sur **Applications** > **tc-install**.
-   - Cocher **Frugal** et **Whole Disk** en choisissant le disque `sda` (select disk for core).
-   - Laisser les paramètres par défaut pour les autres pages et cliquer à la fin sur **Proceed**.
-   - À la fin de l'installation, si tout est ok, on a le message suivant : `Setting up core image on /mnt/sda1`.
-   - Redémarrer la VM
-   <br>
-
-   > Source : [Lien YouTube](https://www.youtube.com/watch?v=_oNzsIcvfbM)
+   - Dans le tty de Tinycore : Télécharger le module « tc -install » avec :
+     ```bash
+     tce-load –wi tc-install
+     ```
+   - Commencer l’installation avec :
+     ```bash
+      sudo tc-install.sh
+     ```
+   - Plusieurs options d’installation vont t’être demandées :
+     - Sélectionner le **CD Rom comme source d’installation** : taper la lettre `c`
+     - Sélectionner **Frugal** pour installer Tinycore en Frugal sur le disque local : taper `f`
+     - Choisisser l’option `1` pour utiliser le disque en entier
+     - Sélectionner le **disque local sda** (option `2`)
+     - **Installer un chargeur de démarrage local** : taper `y`
+     - **Installer les extensions à partir de ce répertoire TCD/CDE** : taper `n`
+     - Sélectionner l'**option de formatage pour sda** : `3` (ext 4)
+     - Sur l’écran suivant, ajouter la résolution d’affichage et le répertoire de restauration TCE en saisissant :
+     ```bash
+     vga=788 tce=hda1 #je pourrai mettre aussi ici azerty ou même les persitents folders
+     ```
+     - Dernière chance de sortir avant de détruire toutes les données sur sda : taper `y`
+   - À la fin, si l'installation est bien faite la sortie indique que l’installation est terminée [et pas de message d’erreur].
+   - Dernière étape :
+     ```bash
+     sudo reboot
+     ```
 
 ## 3.2 Conf automatique du clavier azerty
    - Installation du package de disposition de clavier :
