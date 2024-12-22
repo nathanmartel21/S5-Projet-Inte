@@ -3,8 +3,8 @@
 ## 3.1 Création de la VM TinyCore
 
 1. **Config de la machine virtuelle** :
-   - **Mémoire** : 2 GB
-   - **Proc** : 4
+   - **Mémoire** : 1024 MB
+   - **Proc** : 2
    - **Hard drive** : SATA (4 GB)
 
 2. **Installation de MicroCore en Frugal** :
@@ -40,7 +40,7 @@
 ## 3.2 Conf automatique du clavier azerty
    - Installation du package de disposition de clavier :
    ```bash
-   sudo tce-load -wi kmaps.tcz 
+   tce-load -wi kmaps.tcz 
    ```
    - Chargement du clavier en azerty :
    ```bash
@@ -66,8 +66,6 @@
    opt=sda1 home=sda1
    ```
    - Sauvegarder le fichier, quitter
-   - Dans le ControlPanel > Backup/Restore > Included for Backup, supprimer les items `opt` et `home`
-   - Redémarrer la VM avec l'option None
 
    > Source : [Lien YouTube](https://www.youtube.com/watch?v=9fVkWLM0sCg)
 
