@@ -42,14 +42,14 @@ Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et p
 | R2 - N3    | 10.8.3.1/24                |
 |            | 2001:0:8:3::1/64           |
 | R2 - N4    | 192.168.8.6/30             |
-|            | 3FFE:0:8:4::1/64           |
-| T1 - N3    | 10.8.3.102/24              |
+|            | 3FFE:0:8:4::2/64           |
+| T1 - N1    | 10.8.1.101/24              |
 | T2 - N2    | 10.8.2.102/24              |
 
 | Interfaces | Adresses interfaces        |
 |------------|----------------------------|
-| R1 - N0    | 172.16.8.x/24              |
-|            | 2002:16:8::x/64            |
+| R1 - N0    | 172.16.0.8/24              |
+|            | 2002:16:0:0::8/64            |
 | R1 - N4    | 192.168.8.5/30             |
 |            | 3FFE:0:8:4::1/64           |
 | R1 - N5    | 10.8.5.1/24                |
@@ -57,7 +57,7 @@ Ce projet est un ensemble de travaux pratiques en virtualisation, réseaux, et p
 
 | Interfaces | Adresses interfaces        |
 |------------|----------------------------|
-| T3 - N5    | 10.8.5.103/24              |
+| T3 - N5    | 10.8.3.103/24              |
 | T4 - N3    | 10.8.3.104/24              |
 
 *Tableau 2: Adresses des interfaces réseaux des équipements de NetLab*
