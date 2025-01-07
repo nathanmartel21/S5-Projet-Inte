@@ -94,6 +94,40 @@ reboot
 
 
 
+2.3
+
+```bash
+apk add openssh && rc-update add sshd && rc-service sshd start && rc-update add sshd boot
+apk add filezilla
+apk add tcpdump
+apk add wireshark
+apk add putty
+```
+
+2.4
+
+```bash
+apk add open-vm-tools open-vm-tools-guestinfo open-vm-tools-deploypkg
+rc-service open-vm-tools start
+rc-update add open-vm-tools boot
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
