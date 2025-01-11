@@ -1,6 +1,6 @@
 # Installation et configuration de MicroCore
 
-## 3.1 Création de la VM TinyCore
+## 3.1 Création de la VM TinyCore :
 
 1. **Config de la machine virtuelle** :
    - **Mémoire** : 1024 MB
@@ -37,7 +37,7 @@
      sudo reboot
      ```
 
-## 3.2 Conf automatique du clavier azerty
+## 3.2 Conf automatique du clavier azerty :
    - Installation du package de disposition de clavier :
    ```bash
    tce-load -wi kmaps.tcz 
@@ -58,7 +58,7 @@
 
    > Source : [Lien externe](https://www.eldin.net/meteo/tinycore.php)
 
-## 3.3 Conf des dossiers utilisateurs et logiciels afin qu'ils soient persistant
+## 3.3 Conf des dossiers utilisateurs et logiciels afin qu'ils soient persistant :
    - Lancer la VM et dans RunProgram, lancer editor en super utilisateur
    - Ouvrir le fichier `/mnt/sda1/tce/boot/extlinux/extlinux.conf`
    - Après `quiet`, ajouter :
@@ -69,7 +69,7 @@
 
    > Source : [Lien YouTube](https://www.youtube.com/watch?v=9fVkWLM0sCg)
 
-## 3.4 Intégration des commandes Linux
+## 3.4 Intégration des commandes Linux :
    - L'intégration d'iPv6 dans Microcore se fait par la bibliothèque iptables qui contient elle-même le package ipv6-netfilter. Dans un tty, saisir :
    ```bash
    tce-load -wi tcpdump.tcz
@@ -116,7 +116,3 @@ sudo ip addr add [@IP]/[MASK] dev [INTERFACE] #Ajoute une @IP à la machine
    A chaque redémarrage, Microcore excutera le script et recevra l'adresse statique indiquée dans le script.
 
    > Source : [Lien externe](https://forum.tinycorelinux.net/index.php/topic,13781.0.html)
-
-
-
-
