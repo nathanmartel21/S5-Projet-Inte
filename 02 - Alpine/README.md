@@ -1,6 +1,6 @@
 # Installation et configuration de Alpine Linux
 
-## 2.1 Création de la VM Alpine Linux
+## 2.1 Création de la VM Alpine Linux :
 
 1. **Config de la machine virtuelle** :
    - **Mémoire** : 1024 MB
