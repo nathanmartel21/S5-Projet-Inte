@@ -2,7 +2,7 @@
 
 ## 5.1 Configuration des VMs :
 
-- Chaque VM (Microcore, VyOS et Alpine) est configurée avec une ou plusieurs interfaces réseau, chacune étant connectée à un adaptateur réseau en mode **host-only**.
+- Chaque VM (Microcore, VyOS et Alpine) est configurée avec une ou plusieurs interfaces réseau, chacune étant connectée à un adaptateur réseau en mode **host-only** :
 
 ## 5.2 Configuration des équipements réseaux :
 
@@ -115,3 +115,4 @@
     set protocols ospfv3 interface eth1 area 0
     set protocols ospfv3 parameters router-id 3.3.3.3
     ```
+
