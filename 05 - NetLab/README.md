@@ -9,6 +9,7 @@
 ### Microcore T[n] :
 
   - Configuration automatique avec /opt/eth0.sh :
+    
     ```
     #!/bin/sh
 
@@ -19,12 +20,14 @@
     ```
     
   - Contenu du fichier bootsync :
+    
     ```
     /usr/bin/sethostname T[n]
     /opt/bootlocal.sh &
     ```
     
   - Contenu du fichier bootlocal :
+    
     ```
     #!/bin/sh
     loadkmap < /usr/share/kmap/azerty/fr-latin1.kmap
@@ -35,6 +38,7 @@
 ### VyOS R0 :
 
   - Commandes :
+    
     ```
     set interfaces ethernet eth0 address 10.8.5.2/24
     set interfaces ethernet eth0 address 2001:0:8:5::2/64
@@ -63,6 +67,7 @@
 ### VyOS R1 :
 
   - Commandes :
+    
     ```
     set interfaces ethernet eth0 address 172.16.0.8/24
     set interfaces ethernet eth0 address 2002:16:0:0::8/64
@@ -91,6 +96,7 @@
 ### VyOS R2 :
 
   - Commandes :
+    
     ```
     set interfaces ethernet eth0 address 10.8.3.1/24
     set interfaces ethernet eth0 address 2001:0:8:3::1/64
