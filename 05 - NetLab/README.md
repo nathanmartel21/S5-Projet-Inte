@@ -103,9 +103,9 @@
     set protocols ospf area 0 network 10.8.3.0/24
     set protocols ospf area 0 network 192.168.8.4/30
     set protocols ospf parameters router-id 3.3.3.3
-    ```
 
     set protocols ospfv3 area 0
     set protocols ospfv3 interface eth0 area 0
     set protocols ospfv3 interface eth1 area 0
     set protocols ospfv3 parameters router-id 3.3.3.3
+    ```
