@@ -1,4 +1,4 @@
-# Développement de la commande pour lister les interfaces réseaux de la machine (ifshow) :
+# Développement de la commande pour lister les interfaces (ifshow) :
 
 ## Sur Microcore / Tinycore :
 
