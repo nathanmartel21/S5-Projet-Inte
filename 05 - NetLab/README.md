@@ -62,6 +62,12 @@
     set protocols ospfv3 interface eth1 area 0
     set protocols ospfv3 interface eth2 area 0
     set protocols ospfv3 parameters router-id 1.1.1.1
+
+    set service router-advert interface eth1 prefix 2001:0:8:1::/64
+    set service router-advert interface eth2 prefix 2001:0:8:2::/64
+    set service router-advert interface eth1 name-server 2001:4860:4860::8844
+    set service router-advert interface eth2 name-server 2001:4860:4860::8844
+    set service router-advert interface eth0 no-send-advert
     ```
     
 ### VyOS R1 :
@@ -114,5 +120,8 @@
     set protocols ospfv3 interface eth0 area 0
     set protocols ospfv3 interface eth1 area 0
     set protocols ospfv3 parameters router-id 3.3.3.3
-    ```
 
+    set service router-advert interface eth0 prefix 2001:0:8:3::/64
+    set service router-advert interface eth0 name-server 2001:4860:4860::8844
+    set service router-advert interface eth1 no-send-advert
+    ```
