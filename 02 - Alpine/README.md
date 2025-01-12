@@ -33,7 +33,7 @@ mkdir ~/.config
 cp -r /etc/xdg/openbox ~/.config
 ```
 
-2. Configurer OpenBox pour le lancement :
+2. Configurer OpenBox pour le lancement / GRUB :
 
 - En utilisateur nathan :
 
@@ -66,7 +66,7 @@ setup-xorg-base
 apk add dwm dmenu st
 ```
 
-2. Configurer OpenBox pour le lancement :
+2. Configurer DWM pour le lancement / GRUB :
 
 - En utilisateur nathan :
 
@@ -90,11 +90,7 @@ apk update
 reboot
 ```
 
-3. Configurer Grub :
-
-
-
-2.3
+2.3 Intégration des outils :
 
 ```bash
 apk add openssh && rc-update add sshd && rc-service sshd start && rc-update add sshd boot
@@ -104,40 +100,21 @@ apk add wireshark
 apk add putty
 ```
 
-2.4
+Pour navigateur WEB :
+
+```
+apk update
+echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+sudo apk add netsurf
+startx
+netsurf
+# export DISPLAY=:0 ??
+```
+
+2.4 Installation des services et modules VMware tools :
 
 ```bash
 apk add open-vm-tools open-vm-tools-guestinfo open-vm-tools-deploypkg
 rc-service open-vm-tools start
 rc-update add open-vm-tools boot
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
