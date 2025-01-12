@@ -23,7 +23,7 @@
 
 ### 2.2.1 OpenBox :
 
-1. Installer OpenBox :
+**1. Installer OpenBox** :
 
 ```bash
 setup-xorg-base
@@ -33,7 +33,7 @@ mkdir ~/.config
 cp -r /etc/xdg/openbox ~/.config
 ```
 
-2. Configurer OpenBox pour le lancement / GRUB :
+**2. Configurer OpenBox pour le lancement / GRUB** :
 
 - En utilisateur nathan :
 
@@ -59,14 +59,14 @@ reboot
 
 ### 2.2.2 DWM :
 
-1. Installer DWM :
+**1. Installer DWM** :
 
 ```bash
 setup-xorg-base
 apk add dwm dmenu st
 ```
 
-2. Configurer DWM pour le lancement / GRUB :
+**2. Configurer DWM pour le lancement / GRUB** :
 
 - En utilisateur nathan :
 
@@ -90,7 +90,7 @@ apk update
 reboot
 ```
 
-2.3 Intégration des outils :
+**2.3 Intégration des outils** :
 
 ```bash
 apk add openssh && rc-update add sshd && rc-service sshd start && rc-update add sshd boot
@@ -111,7 +111,7 @@ netsurf
 # export DISPLAY=:0 ??
 ```
 
-2.4 Installation des services et modules VMware tools :
+**2.4 Installation des services et modules VMware tools** :
 
 ```bash
 apk add open-vm-tools open-vm-tools-guestinfo open-vm-tools-deploypkg
