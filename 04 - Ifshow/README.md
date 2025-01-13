@@ -276,7 +276,7 @@ apk del musl-dev
 
 ## Sur VyOS :  
 
-Mettre la debian sur le meme réseau que le routeur VyOS.
+Compiler en amont sur la debian buster le script C. Mettre la debian sur le meme réseau que le routeur VyOS.
 Sur la machine debian, lancer un serveur WEB :
 
 ```
