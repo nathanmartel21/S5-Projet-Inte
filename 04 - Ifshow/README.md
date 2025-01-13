@@ -257,6 +257,11 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+```
+apk del gcc
+apk del musl-dev
+```
+
 ## Sur VyOS :  
 
 ```
