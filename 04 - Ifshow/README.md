@@ -276,8 +276,22 @@ apk del musl-dev
 
 ## Sur VyOS :  
 
+Mettre la debian sur le meme réseau que le routeur VyOS.
+Sur la machine debian, lancer un serveur WEB :
+
 ```
-empty
+sudo -s
+cd ~
+python -m http.server 8080
+```
+
+Sur le routeur VyOS, récupérer le fichier compilé :
+
+```
+sudo bash
+cd /home/vyos
+wget http://192.168.8.137:8080/ifshow
+sudo chmod 777 ifshow
 ```
 
 ## Sur machine hôte (Win64) sur WSL Ubuntu :  
