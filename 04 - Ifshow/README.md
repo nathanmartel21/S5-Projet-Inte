@@ -128,6 +128,18 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+Pour transférer les scripts, sur client :
+
+```
+nc -l -p 9999 > /opt/ifshow.c
+```
+
+Sur le serveur :
+
+```
+cat /opt/ifshow.c | nc 192.168.8.132 9999
+```
+
 ## Sur Alpine Linux :
 
 ```
