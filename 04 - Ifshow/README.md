@@ -137,7 +137,7 @@ nc -l -p 9999 > /opt/ifshow.c
 Sur le serveur :
 
 ```
-cat /opt/ifshow.c | nc 192.168.8.132 9999
+cat /opt/ifshow.c | nc [IP CLIENT] 9999
 ```
 
 ## Sur Alpine Linux :
