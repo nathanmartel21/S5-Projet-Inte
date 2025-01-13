@@ -294,7 +294,7 @@ wget http://192.168.8.137:8080/ifshow
 sudo chmod 777 ifshow
 ```
 
-Faire ensuite un wget entre les routeurs.
+Faire ensuite un wget entre les routeurs et un serveur WEB sur le routeur VyOS primaire.
 
 ## Sur machine hôte (Win64) sur WSL Ubuntu :  
 
