@@ -99,7 +99,7 @@ apk add tcpdump
 apk add wireshark
 apk add putty
 ```
-
+<!---
 Pour navigateur WEB :
 
 ```
@@ -110,11 +110,35 @@ startx
 netsurf
 # export DISPLAY=:0 ??
 ```
+-->
 
 **2.4 Installation des services et modules VMware tools** :
+
+- Ancien :
 
 ```bash
 apk add open-vm-tools open-vm-tools-guestinfo open-vm-tools-deploypkg
 rc-service open-vm-tools start
 rc-update add open-vm-tools boot
 ```
+
+- Nouveau : Il faut savoir que DWM inclu nativement le curseur de la souris ce qui permet de ne pas ce soucier du tools mouse de vmware. Il suffit alors, pour la résolution d'écran de faire :
+
+```
+apk add open-vm-tools-gtk
+rc-update add open-vm-tools
+```
+
+**WARNING sur le deuxième sudo startx, risque de ne pas fonctionner, ne pas faire ce qui suit :**
+
+Jouer ensuite sur :
+
+```
+apk info | grep vm
+
+apk del open-vm-tools-openrc
+apk del open-vm-tools-hgfs
+```
+
+--> fonctionne pour le premier sudo startx mais pour le second non et les suivants aussi.
+
