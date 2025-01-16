@@ -99,18 +99,6 @@ apk add tcpdump
 apk add wireshark
 apk add putty
 ```
-<!---
-Pour navigateur WEB :
-
-```
-apk update
-echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-sudo apk add netsurf
-startx
-netsurf
-# export DISPLAY=:0 ??
-```
--->
 
 **2.4 Installation des services et modules VMware tools** :
 
