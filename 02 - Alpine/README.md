@@ -77,6 +77,12 @@ touch .profile
 touch .xinitrc
 + exec dwm
 apk add sudo
+
+OU
+
+doas vi /etc/doas.d/doas.conf
++ permit nopass nathan as root cmd startx
++ permit nopass root as root cmd startx
 ```
 
 - En utilisateur root :
