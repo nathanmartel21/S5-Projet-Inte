@@ -128,7 +128,8 @@ rc-update add open-vm-tools boot
 - Nouveau : Il faut savoir que DWM inclu nativement le curseur de la souris ce qui permet de ne pas ce soucier du tools mouse de vmware. Il suffit alors, pour la résolution d'écran de faire :
 
 ```
-apk add open-vm-tools-gtk
+apk add open-vm-tools-gtk // pas obligatoire
+apk add xf86-video-vmware
 rc-update add open-vm-tools
 ```
 
