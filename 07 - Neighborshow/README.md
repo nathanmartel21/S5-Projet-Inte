@@ -1,4 +1,4 @@
-Pour alpine, ajouter :
+Pour alpine, bien ajouter :
 
 ```
 #include <sys/select.h>
