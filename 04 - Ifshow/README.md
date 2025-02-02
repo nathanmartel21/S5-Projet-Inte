@@ -10,58 +10,53 @@ tce-load -wi compiletc
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <arpa/inet.h>
-#include <ifaddrs.h>
-#include <net/if.h>
-#include <netinet/in.h>
+#include <arpa/inet.h> // conversion des IPs
+#include <ifaddrs.h> // pour avoir getifaddrs() pour obtenir les IPs des int
+#include <net/if.h> // struct pour les int
+#include <netinet/in.h> // struct pour les int
 
 void print_interface_info(const char *ifname) {
     struct ifaddrs *ifaddr, *ifa;
     char addr[INET6_ADDRSTRLEN];
     char netmask[INET6_ADDRSTRLEN];
 
-    if (getifaddrs(&ifaddr) == -1) {
-        perror("getifaddrs");
-        exit(EXIT_FAILURE);
-    }
-
     for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
         if (ifa->ifa_addr == NULL)
             continue;
 
-        if (ifname != NULL && strcmp(ifa->ifa_name, ifname) != 0)
+        if (ifname != NULL && strcmp(ifa->ifa_name, ifname) != 0) // on traite que l'interface si y'a un argument
             continue;
 
-        if (ifa->ifa_addr->sa_family == AF_INET) {
+        if (ifa->ifa_addr->sa_family == AF_INET) { // verifie si bien ipv4
             // IPv4
             struct sockaddr_in *in = (struct sockaddr_in *)ifa->ifa_addr;
             struct sockaddr_in *mask = (struct sockaddr_in *)ifa->ifa_netmask;
 
-            inet_ntop(AF_INET, &in->sin_addr, addr, sizeof(addr));
-            inet_ntop(AF_INET, &mask->sin_addr, netmask, sizeof(netmask));
+            inet_ntop(AF_INET, &in->sin_addr, addr, sizeof(addr)); // conversion pour que ce soit lisible
+            inet_ntop(AF_INET, &mask->sin_addr, netmask, sizeof(netmask)); // pareil
 
-            int prefix_length = __builtin_popcount(ntohl(mask->sin_addr.s_addr));
+            int prefix_length = __builtin_popcount(ntohl(mask->sin_addr.s_addr)); // compte le nombre de bits à 1 dans le masque
             printf("Interface: %s (IPv4) -> Address: %s/%d\n", ifa->ifa_name, addr, prefix_length);
-        } else if (ifa->ifa_addr->sa_family == AF_INET6) {
+        } else if (ifa->ifa_addr->sa_family == AF_INET6) { // si ipv6
             // IPv6
             struct sockaddr_in6 *in6 = (struct sockaddr_in6 *)ifa->ifa_addr;
             struct sockaddr_in6 *mask6 = (struct sockaddr_in6 *)ifa->ifa_netmask;
 
-            inet_ntop(AF_INET6, &in6->sin6_addr, addr, sizeof(addr));
+            inet_ntop(AF_INET6, &in6->sin6_addr, addr, sizeof(addr)); // conversion lisibilité
 
             // Calculer le préfixe pour IPv6
             int prefix_length = 0;
             if (mask6) {
                 unsigned char *mask_bytes = (unsigned char *)&mask6->sin6_addr;
                 for (int i = 0; i < 16; i++) {
-                    prefix_length += __builtin_popcount(mask_bytes[i]);
+                    prefix_length += __builtin_popcount(mask_bytes[i]); // compte le nombre de bits à 1 dans le masque de sous réseau
                 }
             }
             printf("Interface: %s (IPv6) -> Address: %s/%d\n", ifa->ifa_name, addr, prefix_length);
         }
     }
 
-    freeifaddrs(ifaddr);
+    freeifaddrs(ifaddr); // libère mémoire
 }
 
 void print_all_interfaces_with_prefixes() {
@@ -113,9 +108,9 @@ void print_all_interfaces_with_prefixes() {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc == 3 && strcmp(argv[1], "-i") == 0) {
+    if (argc == 3 && strcmp(argv[1], "-i") == 0) { // si option -i
         print_interface_info(argv[2]);
-    } else if (argc == 2 && strcmp(argv[1], "-a") == 0) {
+    } else if (argc == 2 && strcmp(argv[1], "-a") == 0) { // si option -a
         print_all_interfaces_with_prefixes();
     } else {
         fprintf(stderr, "Usage:\n");
