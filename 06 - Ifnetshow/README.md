@@ -140,26 +140,28 @@ int main() {
 #include <arpa/inet.h>
 
 #define PORT 8080
-#define BUFFER_SIZE 4096
+#define BUFFER_SIZE 4096 // recevoir les données
 
-void send_request(const char *server_ip, const char *command) {
-    int sock;
-    struct sockaddr_in server_addr;
-    char buffer[BUFFER_SIZE];
+void send_request(const char *server_ip, const char *command) { // ip serveur distant et commande envoyée (LIST ou IF)
+    int sock; // id du socket
+    struct sockaddr_in server_addr; // contient l'@ du srv
+    char buffer[BUFFER_SIZE]; // stocke les données reçues du serveur
 
-    sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock < 0) {
-        perror("socket");
-        exit(EXIT_FAILURE);
-    }
+    // creation du stocket
 
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(PORT);
-    if (inet_pton(AF_INET, server_ip, &server_addr.sin_addr) <= 0) {
-        perror("inet_pton");
+    sock = socket(AF_INET, SOCK_STREAM, 0); // ipv4 + TCP (0)
+
+    // config de l'adresse du serv
+
+    server_addr.sin_family = AF_INET;  // utilisation IPv4
+    server_addr.sin_port = htons(PORT); // conversion du numéro de port format réseau
+    if (inet_pton(AF_INET, server_ip, &server_addr.sin_addr) <= 0) { // IP en binaire
+        perror("inet_pton"); // si conversion échoue, ferme socket
         close(sock);
         exit(EXIT_FAILURE);
     }
+
+    // connexion au srv
 
     if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
         perror("connect");
@@ -167,37 +169,48 @@ void send_request(const char *server_ip, const char *command) {
         exit(EXIT_FAILURE);
     }
 
-    send(sock, command, strlen(command), 0);
-    int bytes_received = recv(sock, buffer, BUFFER_SIZE - 1, 0);
-    if (bytes_received > 0) {
-        buffer[bytes_received] = '\0';
-        printf("%s", buffer);
+    // envoi de la commande au srv
+
+    send(sock, command, strlen(command), 0); // long de la commande
+
+    // reception de la réponse du serveur
+
+    int bytes_received = recv(sock, buffer, BUFFER_SIZE - 1, 0); // attend réponse du serveur
+    if (bytes_received > 0) { // si données recue
+        buffer[bytes_received] = '\0'; // pour éviter les erreurs
+        printf("%s", buffer); // affiche réponse
     } else {
         perror("recv");
     }
 
-    close(sock);
+    close(sock); // closing de la socket
 }
 
-int main(int argc, char *argv[]) {
-    if (argc < 3) {
+int main(int argc, char *argv[]) { // nb argument et tableau des args
+    if (argc < 3) { // au moins 3 arguments
         fprintf(stderr, "Usage :\n");
         fprintf(stderr, " %s -n <addr_distante> -a\n", argv[0]);
         fprintf(stderr, " %s -n <addr_distante> -i <ifname>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    const char *server_ip = argv[2];
-    char command[BUFFER_SIZE];
+    // recup des arguments
 
-    if (strcmp(argv[3], "-a") == 0) {
+    const char *server_ip = argv[2]; // ip srv
+    char command[BUFFER_SIZE]; // commande à envoyer
+
+    // construction de la commande
+
+    if (strcmp(argv[3], "-a") == 0) { // envoie LIST
         strcpy(command, "LIST");
-    } else if (strcmp(argv[3], "-i") == 0 && argc == 5) {
+    } else if (strcmp(argv[3], "-i") == 0 && argc == 5) { // envoie IF <ifname>
         snprintf(command, sizeof(command), "IF %s", argv[4]);
     } else {
         fprintf(stderr, "Argument(s) invalide(s)\n");
         exit(EXIT_FAILURE);
     }
+
+    // envoie de la requete
 
     send_request(server_ip, command);
     return 0;
