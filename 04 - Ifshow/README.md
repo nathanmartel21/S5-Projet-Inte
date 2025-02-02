@@ -1,6 +1,6 @@
 # Développement de la commande pour lister les interfaces (ifshow) :
 
-## Sur Microcore / Tinycore :
+## Sur Microcore :
 
 ```
 tce-load -wi compiletc
