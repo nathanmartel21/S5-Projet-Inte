@@ -20,6 +20,11 @@ void print_interface_info(const char *ifname) {
     char addr[INET6_ADDRSTRLEN];
     char netmask[INET6_ADDRSTRLEN];
 
+    if (getifaddrs(&ifaddr) == -1) { // recup des int
+        perror("getifaddrs");
+        exit(EXIT_FAILURE);
+    }
+
     for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
         if (ifa->ifa_addr == NULL)
             continue;
